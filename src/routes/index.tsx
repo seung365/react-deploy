@@ -66,7 +66,7 @@ const routes = [
 ];
 
 const router = createBrowserRouter(routes, {
-  basename: 'https://seung365.github.io/react-deploy/',
+  basename: process.env.PUBLIC_URL,
 });
 
 export const Routes = () => {
