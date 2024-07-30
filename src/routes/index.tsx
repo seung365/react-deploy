@@ -12,7 +12,7 @@ import { OrderPage } from '@/pages/Order';
 import { PrivateRoute } from './components/PrivateRoute';
 import { RouterPath } from './path';
 
-const router = createBrowserRouter([
+const routes = [
   {
     path: RouterPath.root,
     element: <Layout />,
@@ -63,7 +63,11 @@ const router = createBrowserRouter([
     path: RouterPath.membership,
     element: <Membership />,
   },
-]);
+];
+
+const router = createBrowserRouter(routes, {
+  basename: '/react-deploy/',
+});
 
 export const Routes = () => {
   return <RouterProvider router={router} />;
