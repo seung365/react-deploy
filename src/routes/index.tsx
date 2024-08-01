@@ -65,9 +65,7 @@ const routes = [
   },
 ];
 
-const router = createBrowserRouter(routes, {
-  basename: process.env.PUBLIC_URL,
-});
+const router = createBrowserRouter(routes);
 
 export const Routes = () => {
   return <RouterProvider router={router} />;
