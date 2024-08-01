@@ -1,15 +1,14 @@
 import { useMutation } from '@tanstack/react-query';
 
+import { getCurrentBaseURL, getCurrentFetchInstance } from '@/api/instance/index';
 import type { LoginResponseData } from '@/types';
 import type { LoginData } from '@/types';
 import { authSessionStorage } from '@/utils/storage';
 
-import { BASE_URL, fetchInstance } from '../instance';
-
-export const postLoginPath = () => `${BASE_URL}/api/login`;
+export const postLoginPath = () => `${getCurrentBaseURL()}/api/members/login`;
 
 export const postLogin = async ({ email, password }: LoginData) => {
-  const response = await fetchInstance.post<LoginResponseData>(postLoginPath(), {
+  const response = await getCurrentFetchInstance().post<LoginResponseData>(postLoginPath(), {
     email,
     password,
   });
@@ -20,7 +19,7 @@ export const usePostLogin = () => {
   return useMutation<LoginResponseData, Error, LoginData>({
     mutationFn: postLogin,
     onSuccess: (data) => {
-      authSessionStorage.set({ email: data.email, token: data.token });
+      authSessionStorage.set({ token: data.token });
     },
   });
 };

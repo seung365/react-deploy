@@ -2,12 +2,12 @@ import { Grid } from '@chakra-ui/react';
 import { GridItem } from '@chakra-ui/react';
 import { Button as ChakraButton } from '@chakra-ui/react';
 import styled from '@emotion/styled';
+import { useNavigate } from 'react-router-dom';
 
 import { useDeleteWishList } from '@/api/hooks/WishList/useDeleteWishList';
 import { useGetWishList } from '@/api/hooks/WishList/useGetWishList';
 import { Button } from '@/components/common/Button';
 import { Spacing } from '@/components/common/layouts/Spacing';
-import { useAuth } from '@/provider/Auth';
 import { RouterPath } from '@/routes/path';
 import { authSessionStorage } from '@/utils/storage';
 
@@ -16,13 +16,11 @@ type Item = {
 };
 
 export const MyAccountPage = () => {
-  const { authInfo } = useAuth();
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     authSessionStorage.set(undefined);
-
-    const redirectURL = `${window.location.origin}${RouterPath.home}`;
-    window.location.replace(redirectURL);
+    navigate(RouterPath.home);
   };
 
   const { data } = useGetWishList();
@@ -53,7 +51,7 @@ export const MyAccountPage = () => {
         justifyContent={'center'}
       >
         <GridItem>
-          {authInfo?.email}님 안녕하세요! <Spacing height={64} />
+          email님 안녕하세요! <Spacing height={64} />
           <Button
             size="small"
             theme="darkGray"

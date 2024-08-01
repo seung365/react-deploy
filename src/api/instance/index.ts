@@ -16,11 +16,35 @@ const initInstance = (config: AxiosRequestConfig): AxiosInstance => {
   return instance;
 };
 
-export const BASE_URL = 'https://api.example.com';
-// TODO: 추후 서버 API 주소 변경 필요
-export const fetchInstance = initInstance({
-  baseURL: 'https://api.example.com',
-});
+const getBaseURL = (environment: string): string => {
+  switch (environment) {
+    case '김은선':
+      return 'https://api.example.com';
+    case '박준석':
+      return 'https://api.example.com';
+    case '안재민':
+      return 'http://52.78.235.163:8080';
+    case '이도훈':
+      return 'http://52.79.161.58:8080';
+    default:
+      return 'https://api.example.com';
+  }
+};
+
+let BASE_URL1 = getBaseURL(localStorage.getItem('environment') || 'MSW');
+let fetchInstance1 = initInstance({ baseURL: BASE_URL1 });
+
+export const getCurrentBaseURL = () => BASE_URL1;
+export const getCurrentFetchInstance = () => fetchInstance1;
+
+export const updateBaseURL = (environment: string) => {
+  BASE_URL1 = getBaseURL(environment);
+  fetchInstance1 = initInstance({ baseURL: BASE_URL1 });
+  console.log('Updated BASE_URL:', BASE_URL1);
+};
+
+export const BASE_URL = 'http://localhost';
+export const fetchInstance = initInstance({ baseURL: BASE_URL });
 
 export const queryClient = new QueryClient({
   defaultOptions: {

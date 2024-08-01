@@ -1,24 +1,21 @@
 export type CategoryData = {
-  id: number;
+  categoryId: number;
   name: string;
   description: string;
-  color: string;
   imageUrl: string;
 };
 
 export type ProductData = {
-  id: number;
+  productId: number;
   name: string;
   price: number;
   imageUrl: string;
-  categoryId: number;
 };
 
 export type ProductOptionsData = {
-  id: number;
+  productId: number;
   name: string;
   quantity: number;
-  productId: number;
 };
 
 export type GoodsDetailOptionItemData = {
@@ -60,7 +57,6 @@ export type LoginData = {
 };
 
 export type LoginResponseData = {
-  email: string;
   token: string;
 };
 
