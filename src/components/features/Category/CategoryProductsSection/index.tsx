@@ -37,10 +37,10 @@ export const CategoryProductsSection = ({ categoryId }: Props) => {
           }}
           gap={16}
         >
-          {flattenGoodsList.map(({ id, imageUrl, name, price }) => (
-            <Link key={id} to={getDynamicPath.productsDetail(id)}>
+          {flattenGoodsList.map(({ productId, imageUrl, name, price }) => (
+            <Link key={productId} to={getDynamicPath.productsDetail(productId)}>
               <DefaultGoodsItems
-                key={id}
+                key={productId}
                 imageSrc={imageUrl}
                 title={name}
                 amount={price}
