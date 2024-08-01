@@ -60,5 +60,3 @@ jobs:
         run: |
           # 여기에 배포 스크립트를 추가
           # 예: npm run deploy
-        env:
-          # 필요한 환경 변수들 설정
