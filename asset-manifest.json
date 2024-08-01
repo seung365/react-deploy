@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "https://seung365.github.io/react-deploy/static/css/main.689b7bff.css",
-    "main.js": "https://seung365.github.io/react-deploy/static/js/main.cbf3c5f8.js",
-    "static/js/992.12058df2.chunk.js": "https://seung365.github.io/react-deploy/static/js/992.12058df2.chunk.js",
-    "static/js/689.f0ebd6f3.chunk.js": "https://seung365.github.io/react-deploy/static/js/689.f0ebd6f3.chunk.js",
-    "static/media/kakao_logo.svg": "https://seung365.github.io/react-deploy/static/media/kakao_logo.60e99555125ae4c4b8f23f6c5faee9ec.svg",
-    "index.html": "https://seung365.github.io/react-deploy/index.html",
-    "main.689b7bff.css.map": "https://seung365.github.io/react-deploy/static/css/main.689b7bff.css.map",
-    "main.cbf3c5f8.js.map": "https://seung365.github.io/react-deploy/static/js/main.cbf3c5f8.js.map",
-    "992.12058df2.chunk.js.map": "https://seung365.github.io/react-deploy/static/js/992.12058df2.chunk.js.map",
-    "689.f0ebd6f3.chunk.js.map": "https://seung365.github.io/react-deploy/static/js/689.f0ebd6f3.chunk.js.map"
+    "main.css": "/react-deploy/static/css/main.689b7bff.css",
+    "main.js": "/react-deploy/static/js/main.d581d462.js",
+    "static/js/992.12058df2.chunk.js": "/react-deploy/static/js/992.12058df2.chunk.js",
+    "static/js/689.840cc955.chunk.js": "/react-deploy/static/js/689.840cc955.chunk.js",
+    "static/media/kakao_logo.svg": "/react-deploy/static/media/kakao_logo.60e99555125ae4c4b8f23f6c5faee9ec.svg",
+    "index.html": "/react-deploy/index.html",
+    "main.689b7bff.css.map": "/react-deploy/static/css/main.689b7bff.css.map",
+    "main.d581d462.js.map": "/react-deploy/static/js/main.d581d462.js.map",
+    "992.12058df2.chunk.js.map": "/react-deploy/static/js/992.12058df2.chunk.js.map",
+    "689.840cc955.chunk.js.map": "/react-deploy/static/js/689.840cc955.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.689b7bff.css",
-    "static/js/main.cbf3c5f8.js"
+    "static/js/main.d581d462.js"
   ]
 }
