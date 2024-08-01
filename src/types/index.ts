@@ -57,7 +57,6 @@ export type LoginData = {
 };
 
 export type LoginResponseData = {
-  email: string;
   token: string;
 };
 
