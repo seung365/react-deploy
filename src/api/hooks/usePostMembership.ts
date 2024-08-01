@@ -6,7 +6,7 @@ import { authSessionStorage } from '@/utils/storage';
 
 import { BASE_URL, fetchInstance } from '../instance';
 
-export const postMembershipPath = () => `${BASE_URL}/api/register`;
+export const postMembershipPath = () => `${BASE_URL}/api/members/register`;
 
 export const postMembership = async ({ email, password }: LoginData) => {
   const response = await fetchInstance.post<LoginResponseData>(postMembershipPath(), {
