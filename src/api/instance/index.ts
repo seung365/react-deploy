@@ -23,7 +23,7 @@ const getBaseURL = (environment: string): string => {
     case '박준석':
       return 'https://api.example.com';
     case '안재민':
-      return 'http://52.78.235.163:8080';
+      return 'http://43.202.41.179:8080';
     case '이도훈':
       return 'http://52.79.161.58:8080';
     default:
@@ -41,6 +41,7 @@ export const updateBaseURL = (environment: string) => {
   BASE_URL1 = getBaseURL(environment);
   fetchInstance1 = initInstance({ baseURL: BASE_URL1 });
   console.log('Updated BASE_URL:', BASE_URL1);
+  queryClient.invalidateQueries();
 };
 
 export const BASE_URL = 'http://localhost';
