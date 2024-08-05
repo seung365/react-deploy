@@ -19,9 +19,9 @@ const initInstance = (config: AxiosRequestConfig): AxiosInstance => {
 const getBaseURL = (environment: string): string => {
   switch (environment) {
     case '김은선':
-      return 'https://api.example.com';
+      return 'http://15.165.235.250:8000';
     case '박준석':
-      return 'https://api.example.com';
+      return 'https://13.125.130.222:8080';
     case '안재민':
       return 'http://43.202.41.179:8080';
     case '이도훈':
