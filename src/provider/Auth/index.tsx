@@ -15,11 +15,18 @@ export const AuthContext = createContext<AuthContextType | undefined>(undefined)
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [authInfo, setAuthInfo] = useState<LoginResponseData | undefined>(undefined);
 
-  const handleAuthInfo = () => {
-    const updatedAuthInfo = authSessionStorage.get();
+  const handleAuthInfo = async () => {
+    const updatedAuthInfo = await authSessionStorage.get();
     if (updatedAuthInfo) {
-      setAuthInfo(updatedAuthInfo);
+      console.log('im updatae');
+      return new Promise((resolve) => {
+        setAuthInfo(updatedAuthInfo);
+        resolve(updatedAuthInfo);
+      });
+    } else {
+      setAuthInfo(undefined);
     }
+    return undefined;
   };
 
   useEffect(() => {

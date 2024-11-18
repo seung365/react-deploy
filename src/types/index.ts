@@ -68,3 +68,20 @@ export type WishResponseData = {
   id: number;
   productId: number;
 };
+
+export type OrderData = {
+  orderlist: {
+    productId: number;
+    optionId: number;
+    quantity: number;
+    hasCashReceipt?: boolean;
+    cashReceiptType?: 'PERSONAL' | 'BUSINESS';
+    cashReceiptNumber?: string;
+    message: string;
+    point: number;
+  };
+};
+
+export type OrderResponseData = {
+  orderId: number;
+};

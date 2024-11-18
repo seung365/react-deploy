@@ -8,6 +8,7 @@ import { useDeleteWishList } from '@/api/hooks/WishList/useDeleteWishList';
 import { useGetWishList } from '@/api/hooks/WishList/useGetWishList';
 import { Button } from '@/components/common/Button';
 import { Spacing } from '@/components/common/layouts/Spacing';
+import { useAuth } from '@/provider/Auth';
 import { RouterPath } from '@/routes/path';
 import { authSessionStorage } from '@/utils/storage';
 
@@ -17,9 +18,11 @@ type Item = {
 
 export const MyAccountPage = () => {
   const navigate = useNavigate();
+  const { handleAuthInfo } = useAuth();
 
   const handleLogout = () => {
     authSessionStorage.set(undefined);
+    handleAuthInfo();
     navigate(RouterPath.home);
   };
 
@@ -51,17 +54,20 @@ export const MyAccountPage = () => {
         justifyContent={'center'}
       >
         <GridItem>
-          email님 안녕하세요! <Spacing height={64} />
-          <Button
-            size="small"
-            theme="darkGray"
-            onClick={handleLogout}
-            style={{
-              maxWidth: '200px',
-            }}
-          >
-            로그아웃
-          </Button>
+          <Grid templateRows="repeat(3,1fr)" h="60%">
+            email님 안녕하세요! <Spacing height={64} />
+            <PointsWrapper>현재 잔여 포인트 : </PointsWrapper>
+            <Button
+              size="small"
+              theme="darkGray"
+              onClick={handleLogout}
+              style={{
+                maxWidth: '200px',
+              }}
+            >
+              로그아웃
+            </Button>
+          </Grid>
         </GridItem>
         <GridItem>
           <div>WishList</div>
@@ -101,4 +107,8 @@ const WishListWrapper = styled.div`
   align-items: center;
   font-size: 18px;
   gap: 20px;
+`;
+
+const PointsWrapper = styled.div`
+  font-size: 18px;
 `;
